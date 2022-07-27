@@ -7,8 +7,8 @@ from .forms import Blogform, BlogModelForm, CommentForm
 # Create your views here.
 def home(request):
     # To show all the posts in home. 
-    # posts = Blog.objects.all()
-    posts = Blog.objects.filter.order_by('-date') # code to filter, this one is by order of date 
+    posts = Blog.objects.all()
+    # posts = Blog.objects.filter.order_by('-date') # code to filter, this one is by order of date 
     return render(request, 'index.html', {'posts':posts})
 
 # html to show for a user to write a new post

@@ -1,3 +1,8 @@
+{% if user.is_authenticated %} Hi, {{user.username}}! <br />
+<a href="{% url 'logout  ' %}">Logout</a>
+{% else %} Not yet login<br />
+{% endif %}
+<a href="{% url 'login' %}">Login</a>
 <h1>My simple blog</h1>
 
 <!-- This area is to show the list of posts -->
