@@ -1,1 +1,13 @@
 <h1>My simple blog</h1>
+
+<!-- This area is to show the list of posts -->
+{% for post in posts %}
+<h3>Title : {{ post.title }}</h3>
+<h4>Contents : {{ post.date }}</h4>
+{% endfor %}
+<br /><br /><br />
+<a href="{% url 'new' %}">Write a new post using HTML</a><br />
+<a href="{% url 'formcreate' %}">Write a new post using django form</a><br />
+<a href="{% url 'modelformcreate' %}"
+  >Write a new post using django modelform</a
+>

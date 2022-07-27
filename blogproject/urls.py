@@ -20,4 +20,14 @@ from blogapp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name = 'home'),
+    
+    # making a blog object by using html form.
+    path('new/', views.new, name='new'),
+    path('create/', views.create, name='create'),
+
+    # making a blog object by using django form 
+    path('formcreate/', views.formcreate, name='formcreate'),
+
+    # making a blog object by using django modelform.
+    path('modelformcreate/', views.modelformcreate, name='modelformcreate'),
 ]

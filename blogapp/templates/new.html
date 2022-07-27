@@ -1,0 +1,12 @@
+<form action="{% url 'create' %}" method="POST">
+  {% csrf_token %}
+  <div>
+    <label for="title">Title</label><br />
+    <input type="text" name="title" id="title" />
+  </div>
+  <div>
+    <label for="body">Main</label><br />
+    <textarea name="body" id="body" cols="30" rows="10"></textarea>
+  </div>
+  <input type="submit" value="Create a post" />
+</form>
