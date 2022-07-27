@@ -16,7 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from blogapp import views
-
+from django.conf import settings
+from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name = 'home'),
@@ -30,4 +31,9 @@ urlpatterns = [
 
     # making a blog object by using django modelform.
     path('modelformcreate/', views.modelformcreate, name='modelformcreate'),
-]
+
+    path('detail/<int:blog_id>', views.detail, name='detail'),
+
+    path('create_comment/<int:blog_id>', views.create_comment, name='create_comment'),
+
+] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

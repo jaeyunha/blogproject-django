@@ -1,0 +1,27 @@
+<h1>Title</h1>
+{{ blog_detail.title }}
+
+<h2>Date</h2>
+{{ blog_detail.date }}
+
+<h3>Body</h3>
+{{ blog_detail.body}}
+
+<h3>Inserted files in Body</h3>
+{% if blog_detail.photo %}
+<!-- 사진 찍어주기 -->
+{{ blog_detail.photo.url }}
+<img src="{{ blog_detail.photo.url }}" alt="" height="600" />
+{% endif %}
+
+<h3>Comment</h3>
+<form method="POST" action="{% url 'create_comment' blog_detail.id %}">
+  % csrf_token % {{ comment_form }}
+  <input type="submit" />
+</form>
+
+<!-- list of comment -->
+{% for comment in blog_detail.comment_set.all %}
+<p>{{ comment }}</p>
+<hr />
+{% endfor %}

@@ -2,7 +2,7 @@
 
 <!-- This area is to show the list of posts -->
 {% for post in posts %}
-<h3>Title : {{ post.title }}</h3>
+<a href="{% url 'detail' post.id %}"><h3>Title : {{ post.title }}</h3></a>
 <h4>Contents : {{ post.date }}</h4>
 {% endfor %}
 <br /><br /><br />
